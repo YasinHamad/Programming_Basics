@@ -1,0 +1,118 @@
+#include <iostream>
+#include <cmath>
+#include <string> // to use the string object
+#include <cstdlib>
+#include <vector>
+#include <cctype> // isupper(), isdigit()
+#include <iomanip> // for setw()
+//#include <fstream> // for files
+//#include <ctime> // for time
+#include <print>
+
+
+//#include <sstream> // for ostringstream oss;
+
+#include "readers.h"
+#include "printers.h"
+#include "converters.h"
+#include "files.h"
+#include "datetime.h"
+#include "generators.h"
+#include "allocators.h"
+#include "fillers.h"
+
+using namespace std;
+
+#define SIZE 50
+/* --------------------------------- FUNCTIONS --------------------------------- */
+int MinNumberInMatrix(int** matrix, int rows, int columns) {
+	int number = *(*matrix);
+	int temp = *(*matrix);
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			temp = *(*(matrix + i) + j);
+			number = temp > number ? number : temp;
+		}
+	}
+	return number;
+}
+int MaxNumberInMatrix(int** matrix, int rows, int columns) {
+	int number = 0;
+	int temp = 0;
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			temp = *(*(matrix + i) + j);
+			number = temp < number ? number : temp;
+		}
+	}
+	return number;
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------- FUNCTIONS --------------------------------- */
+
+
+int main()
+{
+	while (true) {
+		srand((unsigned)time(NULL));
+		/* -------------------------------- CODE --------------------------------- */
+
+
+		/* --------------------------------- VARIABLES --------------------------------- */
+		int rows = 5;
+		int col = 5;
+
+		int** matrix_01 = NULL;
+		//int** matrix_02 = NULL;
+		/* --------------------------------- VARIABLES --------------------------------- */
+
+		/* --------------------------------- MAIN WORK --------------------------------- */
+		matrix_01 = allocators::two_dim_array::AllocateTwoDirArray(rows, col);
+		//matrix_02 = allocators::two_dim_array::AllocateTwoDirArray(rows, col);
+		fillers::two_dim_array::FillTwoDimArrayWithRandomNumbers(matrix_01, rows, col, 1, 9);
+		//fillers::two_dim_array::FillTwoDimArrayWithRandomNumbers(matrix_02, rows, col, 1, 90);
+		/* --------------------------------- MAIN WORK --------------------------------- */
+
+
+		/* --------------------------------- PRINT --------------------------------- */
+		//printf("Your matrix %d x %d\n", rows, col);
+		
+		printers::two_dim_array::PrintTwoDimArray(matrix_01, rows, col, 2);
+
+		cout << endl;
+
+		//printers::two_dim_array::PrintTwoDimArray(matrix_02, rows, col, 2);
+
+		//cout << endl;
+
+		//vector<int> result = math::two_dim_array::IntersectedNumbers(matrix_01, rows, col, matrix_02, rows, col);
+
+		//printers::vector_utilities::PrintVector(result);
+
+		printf("%d", MinNumberInMatrix(matrix_01, rows, col));
+		printf("%d", MaxNumberInMatrix(matrix_01, rows, col));
+		
+		/* --------------------------------- PRINT --------------------------------- */
+
+
+		/* --------------------------------- DELETE --------------------------------- */
+		allocators::two_dim_array::DeleteTwoDimArray(matrix_01, rows);
+		//allocators::two_dim_array::DeleteTwoDimArray(matrix_02, rows);
+		/* --------------------------------- DELETE --------------------------------- */
+
+
+		/* --------------------------------- CODE --------------------------------- */
+		break;
+	}
+
+	return 0;
+}
