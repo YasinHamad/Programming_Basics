@@ -2162,6 +2162,7 @@ C++ classes is built upon C structures, with enhancements, for example (inherita
 | Purpose                                        | generally for grouping data     | data abstraction and more inheritance |  
 | Allocated in (not sure about this information) | stack (value type)              | heap (refernece type)                 |  
 | Constructor                                    | only parametarized constructors | all types of constructors             |  
+
 For small things, use a structure. Because it is allocated in stack.  
 For large things, use a class. Because it is allocated in heap.  
 Use a structure only to group small amount of data, other than this, use a class. Even if you have only one function.  
