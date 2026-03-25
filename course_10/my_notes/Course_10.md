@@ -1328,6 +1328,7 @@ class DerivedClassName : <Visibility Mode> BaseClassName {
 | public inheritance    | inaccessible    | protected         | public         |  
 | private inheritance   | inaccessible    | private           | private        |  
 | protected inheritance | inaccessible    | protected         | proteced       |  
+
 As you can read in the table, the private inheritance make all inherited members private, and the protected inheritance make them protected.  
   
 ## Types of Inheritance  
