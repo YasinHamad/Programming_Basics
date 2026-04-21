@@ -672,5 +672,14 @@ public:
 
 		return sum;
 	}
+
+	template <typename element_type>
+	static element_type GetRandomElementFromVector(vector<element_type> data) {
+		return data.at(clsUtil::RandomNumber(0, data.size() - 1));
+	}
+
+	void MoveCursorTo(int x, int y) {
+		cout << "\x1b[" << x << ";" << y << "H";
+	}
 };
 
