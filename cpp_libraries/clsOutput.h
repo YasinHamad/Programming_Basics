@@ -363,7 +363,7 @@ public:
 	}
 
 	static string FormatNumber(int number, int digits = 1) {
-		if (digits == 1 || number <= 0) return to_string(number);
+		if (digits == 1 || number < 0) return to_string(number);
 
 		string result = to_string(number);
 		int length = result.length();

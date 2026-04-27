@@ -103,7 +103,6 @@ public:
 		return number;
 	}
 
-
 	static string ReadAWord(string message) {
 		string W;
 		cout << message;
