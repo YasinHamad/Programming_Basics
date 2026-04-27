@@ -1,9 +1,5 @@
 # Course_10
 
-I built three projects in this course:
+I made a documentation for the doubly linked list project, you can find it here:  
 
-[clsString Library](https://github.com/YasinHamad/clsString_Library_Cpp.git)
-
-[clsDate Library](https://github.com/YasinHamad/clsDate_Library_Cpp.git)
-
-[clsPeriod Library](https://github.com/YasinHamad/clsPeriod_Library_Cpp.git)
+[clsDblLinkedList](https://github.com/YasinHamad/clsDblLinkedList_Class_Cpp)
